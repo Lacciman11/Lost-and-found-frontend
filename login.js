@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.setItem("accessToken", data.token);
 
         alert("Login successful!");
-        window.location.href = "project.html"; // redirect to dashboard
+        window.location.href = "indexhtml"; // redirect to dashboard
       } else {
         alert(data.message || "Login failed. Please try again.");
       }
