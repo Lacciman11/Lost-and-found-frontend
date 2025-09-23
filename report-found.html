@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Found Item - Lost & Found</title>
+  <link rel="stylesheet" href="report-found.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-flex">
+      <h1 class="logo">Lost<span>&</span>Found</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="project.html">Home</a></li>
+          <li><a href="report-lost.html">Report Lost</a></li>
+          <li><a href="report-found.html" class="active">Report Found</a></li>
+          <li><a href="Browse.html">Browse Items</a></li>
+          <li><a id="logout">Logout</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Report Found Form -->
+  <section class="form-section container">
+    <h2>Report a Found Item</h2>
+    <form id="foundForm">
+      <label for="itemName">Item Name</label>
+      <input type="text" id="itemName" placeholder="e.g. Wallet" required>
+
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="Where did you find it?" required>
+
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Brief description of the item" required></textarea>
+
+      <label for="contact">Your Contact</label>
+      <input type="text" id="contact" placeholder="Phone or Email" required>
+
+      <label for="image">Upload Image</label>
+      <input type="file" id="image" accept="image/*">
+
+      <button type="submit" class="btn-primary">Submit Report</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Lost & Found Tracker. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="report-found.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Items - Lost & Found</title>
+  <link rel="stylesheet" href="browse.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar container">
+      <div class="logo">Lost<span>&</span>Found</div>
+      <ul class="nav-links">
+        <li><a href="project.html">Home</a></li>
+        <li><a href="report-lost.html">Report Lost</a></li>
+        <li><a href="report-found.html">Report Found</a></li>
+        <li><a href="browse.html" class="active">Browse</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BROWSE SECTION -->
+  <section class="browse container">
+    <h2>Browse Items</h2>
+
+    <!-- Quick Stats -->
+    <div class="stats-bar">
+      <div class="stat-box">
+        <h3>📦 120</h3>
+        <p>Total Lost Items</p>
+      </div>
+      <div class="stat-box">
+        <h3>✅ 80</h3>
+        <p>Items Found</p>
+      </div>
+      <div class="stat-box">
+        <h3>⏳ 40</h3>
+        <p>Pending Claims</p>
+      </div>
+    </div>
+
+    <!-- Featured Items -->
+    <div class="featured-items">
+      <h3>⭐ Featured Items</h3>
+      <div class="featured-grid">
+        <div class="featured-card">
+          <img src="assets/american-passport.jpg" alt="Passport">
+          <div>
+            <h4>International Passport</h4>
+            <p>Lost near Admin Office</p>
+          </div>
+        </div>
+        <div class="featured-card">
+          <img src="assets/white-dog.jpg" alt="Pet Dog">
+          <div>
+            <h4>Golden Retriever</h4>
+            <p>Found near Campus Gate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="filter-bar">
+      <input type="text" placeholder="🔍 Search items..." class="search-box">
+
+      <select class="filter-select">
+        <option value="">All Categories</option>
+        <option value="lost">Lost</option>
+        <option value="found">Found</option>
+      </select>
+
+      <select class="location-select">
+        <option value="">All Locations</option>
+        <option value="library">Library</option>
+        <option value="cafeteria">Cafeteria</option>
+        <option value="dorm">Dorm</option>
+        <option value="gate">Campus Gate</option>
+      </select>
+
+      <select class="sort-select">
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="az">A – Z</option>
+        <option value="za">Z – A</option>
+      </select>
+    </div>
+
+    <!-- Item Grid (Dynamic) -->
+    <div class="item-grid" id="itemGrid">
+      <!-- ✅ Items will be inserted here by browse.js -->
+    </div>
+
+    <!-- Urgent Notices -->
+    <div class="urgent-section">
+      <h3>🚨 Urgent Notices</h3>
+      <ul>
+        <li>Lost <strong>Passport</strong> – Contact Security Office immediately.</li>
+        <li>Found <strong>Car Keys</strong> near Parking Lot.</li>
+      </ul>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="recent-activity">
+      <h3>🕒 Recent Activity</h3>
+      <div class="activity-grid">
+        <div class="activity-card">
+          <img src="assets/laptop-computer.jpg" alt="Laptop">
+          <div class="activity-info">
+            <h4>Sarah reported a Lost Laptop</h4>
+            <p>10 mins ago · Library</p>
+          </div>
+        </div>
+        <div class="activity-card">
+          <img src="assets/wallet.jpg" alt="Wallet">
+          <div class="activity-info">
+            <h4>John found a Wallet</h4>
+            <p>30 mins ago · Cafeteria</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call-to-Action -->
+    <div class="cta-banner">
+      <h3>Lost or Found Something?</h3>
+      <p>Help others by reporting lost or found items today.</p>
+      <a href="report-lost.html" class="cta-btn">Report Lost Item</a>
+      <a href="report-found.html" class="cta-btn secondary">Report Found Item</a>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">Next »</a>
+    </div>
+  </section>
+
+  <script src="browse.js"></script>
+</body>
+</html>

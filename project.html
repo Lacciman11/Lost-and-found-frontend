@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost & Found Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-flex">
+      <h1 class="logo">Lost<span>&</span>Found</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="report-lost.html">Report Lost</a></li>
+          <li><a href="report-found.html">Report Found</a></li>
+          <li><a href="Browse.html">Browse Items</a></li>
+          <li><a id="logout">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h2>Find or Report Lost Items Easily</h2>
+      <p>Helping students and staff reconnect with lost belongings quickly and safely.</p>
+      <a href="report-lost.html" class="btn-primary">Report an Item</a>
+    </div>
+  </section>
+
+  <!-- SEARCH SECTION -->
+  <section class="search container">
+    <form>
+      <input type="text" placeholder="🔍 Search for lost items (e.g. phone, bag, ID card)">
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <!-- ITEMS GRID -->
+  <section class="items container">
+    <h3>Recently Reported</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/samsung phone.jpg" alt="Lost Phone">
+        <div class="card-body">
+          <h4>Samsung Phone</h4>
+          <p><span class="badge lost">Lost</span> Library</p> <br>
+          <a href="#" class="btn-secondary">View Details</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/wallet.jpg" alt="Found Wallet">
+        <div class="card-body">
+          <h4>Black Wallet</h4>
+          <p><span class="badge found">Found</span> Cafeteria</p> <br>
+          <a href="#" class="btn-secondary">View Details</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/card.jpg" alt="Lost ID Card">
+        <div class="card-body">
+          <h4>Student ID Card</h4>
+          <p><span class="badge lost">Lost</span> Lecture Hall 2</p> <br>
+          <a href="#" class="btn-secondary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta">
+    <div class="container">
+      <h2>Have you lost or found something?</h2>
+      <a href="report-lost.html" class="btn-primary">Report Lost Item</a>
+      <a href="report-found.html" class="btn-secondary">Report Found Item</a>
+    </div>
+  </section>
+
+  <!-- RECENT ACTIVITY -->
+  <section class="recent-activity container">
+    <h3>🕒 Recent Activity</h3>
+    <!-- ✅ Dynamic list -->
+    <div id="activityList"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Lost&Found</h4>
+        <p>Helping you reconnect with your belongings.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="report-lost.html">Report Lost</a></li>
+          <li><a href="report-found.html">Report Found</a></li>
+          <li><a href="browse.html">Browse Items</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@lostfound.com</p>
+        <p>Phone: +234 800 123 4567</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 Lost & Found Tracker. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ✅ Load activity.js -->
+  <script src="activity.js"></script>
+</body>
+</html>
