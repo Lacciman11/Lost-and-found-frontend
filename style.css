@@ -15,6 +15,31 @@ body {
   margin: auto;
 }
 
+/* style.css */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.loading i {
+  margin-right: 10px;
+}
+
+.error {
+  color: #d32f2f;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.hidden {
+  display: none;
+}
+
 /* Navbar */
 .navbar {
   background: #4A90E2;

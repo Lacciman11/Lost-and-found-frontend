@@ -49,12 +49,16 @@
   </section>
 
   <!-- ITEMS GRID (Dynamic) -->
-  <section class="items container">
-    <h3>Recently Reported</h3>
-    <div class="grid" id="itemsGrid">
-      <!-- ✅ Cards will be loaded dynamically by activity.js -->
+<section class="items container">
+  <h3>Recently Reported</h3>
+  <div class="grid" id="itemsGrid">
+    <!-- Loading state will be added dynamically -->
+    <div id="itemsLoading" class="loading hidden">
+      <i class="fas fa-spinner fa-spin"></i> Loading items...
     </div>
-  </section>
+    <div id="itemsError" class="error hidden"></div>
+  </div>
+</section>
 
   <!-- CTA SECTION -->
   <section class="cta">
@@ -67,13 +71,17 @@
     </div>
   </section>
 
-  <!-- RECENT ACTIVITY -->
-  <section class="recent-activity container">
-    <h3>🕒 Recent Activity</h3>
-    <div id="activityList">
-      <!-- ✅ Activities will be loaded dynamically by activity.js -->
+<!-- RECENT ACTIVITY -->
+<section class="recent-activity container">
+  <h3>🕒 Recent Activity</h3>
+  <div id="activityList">
+    <!-- Loading state will be added dynamically -->
+    <div id="activityLoading" class="loading hidden">
+      <i class="fas fa-spinner fa-spin"></i> Loading recent activity...
     </div>
-  </section>
+    <div id="activityError" class="error hidden"></div>
+  </div>
+</section>
 
   <!-- ITEM DETAILS MODAL -->
 <div id="itemModal" class="modal hidden">

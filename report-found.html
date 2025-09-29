@@ -21,7 +21,6 @@
           <li><a id="logout">Logout</a></li>
         </ul>
       </nav>
-  
       <!-- Hamburger -->
       <button class="menu-toggle" id="menuToggle">
         <i class="fas fa-bars"></i>
@@ -48,7 +47,9 @@
       <label for="image">Upload Image</label>
       <input type="file" id="image" accept="image/*">
 
-      <button type="submit" class="btn-primary">Submit Report</button>
+      <button type="submit" class="btn-primary" id="submitBtn" data-loading-text="Loading...">
+        Submit Report
+      </button>
     </form>
   </section>
 

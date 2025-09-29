@@ -62,7 +62,39 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* browse.css (append to existing file) */
 
+/* ... Existing styles ... */
+
+/* Loading and Error States */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.loading i {
+  margin-right: 10px;
+}
+
+.error {
+  color: #d32f2f;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.hidden {
+  display: none;
+}
+
+.loading-text {
+  color: #555;
+  font-size: 12px;
+}
 
 /* Navbar */
 /* .navbar {

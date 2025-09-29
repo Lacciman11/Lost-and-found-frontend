@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container nav-flex">
@@ -16,19 +15,19 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="report-lost.html" >Report Lost</a></li>
-          <li><a href="report-found.html" >Report Found</a></li>
+          <li><a href="report-lost.html">Report Lost</a></li>
+          <li><a href="report-found.html">Report Found</a></li>
           <li><a href="Browse.html" class="active">Browse Items</a></li>
           <li><a id="logout">Logout</a></li>
         </ul>
       </nav>
-  
       <!-- Hamburger -->
       <button class="menu-toggle" id="menuToggle">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </header>
+
   <!-- BROWSE SECTION -->
   <section class="browse container">
     <h2>Browse Items</h2>
@@ -36,13 +35,14 @@
     <!-- Quick Stats -->
     <div class="stats-bar">
       <div class="stat-box">
-        <h3>📦 120</h3>
+        <h3 id="lostCount">📦 <span class="loading-text">Loading...</span></h3>
         <p>Total Lost Items</p>
       </div>
       <div class="stat-box">
-        <h3>✅ 80</h3>
+        <h3 id="foundCount">✅ <span class="loading-text">Loading...</span></h3>
         <p>Items Found</p>
       </div>
+      <div id="statsError" class="error hidden"></div>
     </div>
 
     <!-- Search & Filter -->
@@ -52,7 +52,10 @@
 
     <!-- Item Grid (Dynamic) -->
     <div class="item-grid" id="itemGrid">
-      <!-- ✅ Items will be inserted here by browse.js -->
+      <div id="itemsLoading" class="loading hidden">
+        <i class="fas fa-spinner fa-spin"></i> Loading items...
+      </div>
+      <div id="itemsError" class="error hidden"></div>
     </div>
 
     <!-- Urgent Notices -->
@@ -64,21 +67,11 @@
     <!-- Recent Activity -->
     <div class="recent-activity">
       <h3>🕒 Recent Activity</h3>
-      <div class="activity-grid">
-        <div class="activity-card">
-          <img src="assets/laptop-computer.jpg" alt="Laptop">
-          <div class="activity-info">
-            <h4>Sarah reported a Lost Laptop</h4>
-            <p>10 mins ago · Library</p>
-          </div>
+      <div class="activity-grid" id="activityGrid">
+        <div id="activityLoading" class="loading hidden">
+          <i class="fas fa-spinner fa-spin"></i> Loading recent activity...
         </div>
-        <div class="activity-card">
-          <img src="assets/wallet.jpg" alt="Wallet">
-          <div class="activity-info">
-            <h4>John found a Wallet</h4>
-            <p>30 mins ago · Cafeteria</p>
-          </div>
-        </div>
+        <div id="activityError" class="error hidden"></div>
       </div>
     </div>
 
@@ -89,6 +82,7 @@
       <a href="report-lost.html" class="cta-btn">Report Lost Item</a>
       <a href="report-found.html" class="cta-btn secondary">Report Found Item</a>
     </div>
+  </section>
 
   <script src="browse.js"></script>
 </body>
