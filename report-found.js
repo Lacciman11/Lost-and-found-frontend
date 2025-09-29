@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("foundForm");
   const logout = document.getElementById("logout");
+  const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelector(".nav-links");
 
   const token = sessionStorage.getItem("accessToken");
   if (!token) {
@@ -58,6 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error:", err);
       alert("❌ Could not connect to the server. Try again.");
     }
+  });
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    // Switch icon between bars & close
+    const icon = menuToggle.querySelector("i");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
   });
 
   // User logout

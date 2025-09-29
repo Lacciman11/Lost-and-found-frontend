@@ -13,6 +13,10 @@ body {
   line-height: 1.6;
 }
 
+header{
+  padding:10px 20px;
+}
+
 Navbar
 .navbar {
   background-color: #fff;
@@ -137,8 +141,17 @@ textarea {
   font-size: 0.9rem;
 }
 
+
+.menu-toggle {
+  display: none; /* hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color:black;
+  cursor: pointer;
+}
 /* Responsive */
-@media(max-width: 768px) {
+/* @media(max-width: 768px) {
   .nav-flex {
     flex-direction: column;
     gap: 1rem;
@@ -147,5 +160,28 @@ textarea {
   .nav-links {
     flex-direction: column;
     gap: 0.8rem;
+  }
+} */
+
+
+@media (max-width:900px) {
+  .nav-links {
+    display: none; /* hide menu */
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 200px;
+  }
+
+  .nav-links.active {
+    display: flex; /* show when active */
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger */
   }
 }

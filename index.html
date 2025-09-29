@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lost & Found Tracker</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -14,13 +15,18 @@
       <h1 class="logo">Lost<span>&</span>Found</h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html"  class="active">Home</a></li>
           <li><a href="report-lost.html">Report Lost</a></li>
           <li><a href="report-found.html">Report Found</a></li>
           <li><a href="Browse.html">Browse Items</a></li>
           <li><a id="logout">Logout</a></li>
         </ul>
       </nav>
+  
+      <!-- Hamburger -->
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
@@ -42,34 +48,11 @@
     </form>
   </section>
 
-  <!-- ITEMS GRID -->
+  <!-- ITEMS GRID (Dynamic) -->
   <section class="items container">
     <h3>Recently Reported</h3>
-    <div class="grid">
-      <div class="card">
-        <img src="assets/samsung phone.jpg" alt="Lost Phone">
-        <div class="card-body">
-          <h4>Samsung Phone</h4>
-          <p><span class="badge lost">Lost</span> Library</p> <br>
-          <a href="#" class="btn-secondary">View Details</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="assets/wallet.jpg" alt="Found Wallet">
-        <div class="card-body">
-          <h4>Black Wallet</h4>
-          <p><span class="badge found">Found</span> Cafeteria</p> <br>
-          <a href="#" class="btn-secondary">View Details</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="assets/card.jpg" alt="Lost ID Card">
-        <div class="card-body">
-          <h4>Student ID Card</h4>
-          <p><span class="badge lost">Lost</span> Lecture Hall 2</p> <br>
-          <a href="#" class="btn-secondary">View Details</a>
-        </div>
-      </div>
+    <div class="grid" id="itemsGrid">
+      <!-- ✅ Cards will be loaded dynamically by activity.js -->
     </div>
   </section>
 
@@ -77,17 +60,34 @@
   <section class="cta">
     <div class="container">
       <h2>Have you lost or found something?</h2>
-      <a href="report-lost.html" class="btn-primary">Report Lost Item</a>
-      <a href="report-found.html" class="btn-secondary">Report Found Item</a>
+      <div class="cta-buttons">
+        <a href="report-lost.html" class="btn-primary">Report Lost Item</a>
+        <a href="report-found.html" class="btn-secondary">Report Found Item</a>
+      </div>
     </div>
   </section>
 
   <!-- RECENT ACTIVITY -->
   <section class="recent-activity container">
     <h3>🕒 Recent Activity</h3>
-    <!-- ✅ Dynamic list -->
-    <div id="activityList"></div>
+    <div id="activityList">
+      <!-- ✅ Activities will be loaded dynamically by activity.js -->
+    </div>
   </section>
+
+  <!-- ITEM DETAILS MODAL -->
+<div id="itemModal" class="modal hidden">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <img id="modalImage" src="assets/placeholder.png" alt="Item Image">
+    <h3 id="modalTitle"></h3>
+    <p id="modalLocation"></p>
+    <p id="modalDescription"></p>
+    <p><strong>Contact:</strong> <span id="modalContact"></span></p>
+    <p><small id="modalDate"></small></p>
+  </div>
+</div>
+
 
   <!-- FOOTER -->
   <footer class="footer">
