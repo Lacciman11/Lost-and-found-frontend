@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // API base
-  const API_BASE = "https://lost-and-found-epjk.onrender.com"; // change to your deployed URL when ready
+  const API_BASE = "https://lost-and-found-epjk.onrender.com/api"; // change to your deployed URL when ready
 
   // state
   let allItems = [];

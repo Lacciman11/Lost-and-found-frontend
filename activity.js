@@ -24,7 +24,7 @@ const navLinks = document.querySelector(".nav-links");
   // activity.js
 
 // Base URL of your backend API
-const API_BASE = "https://lost-and-found-epjk.onrender.com"; // change when deployed
+const API_BASE = "https://lost-and-found-epjk.onrender.com/api"; // change when deployed
 
 // DOM elements
 const itemsGrid = document.querySelector(".items .grid");
