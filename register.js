@@ -1,6 +1,8 @@
-// Register Form Validation + API Call
+// register.js
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registerForm");
+  const registerBtn = document.getElementById("registerBtn");
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -11,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value.trim();
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    // --- Client-side Validation ---
+    // Client-side Validation
     if (fullName === "") {
       alert("Full name is required");
       return;
@@ -32,8 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // --- Send to Backend ---
+    // Toggle button loading state
+    function toggleButtonLoading(isLoading) {
+      if (isLoading) {
+        registerBtn.disabled = true;
+        registerBtn.classList.add("loading");
+        registerBtn.textContent = registerBtn.dataset.loadingText;
+      } else {
+        registerBtn.disabled = false;
+        registerBtn.classList.remove("loading");
+        registerBtn.textContent = "Register";
+      }
+    }
+
+    // Send to Backend
     try {
+      toggleButtonLoading(true);
+
       const res = await fetch("https://lost-and-found-epjk.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (res.ok) {
         alert(data.message || "Registration successful!");
-        // Redirect to login page after success
         window.location.href = "login.html";
       } else {
         alert(data.error || "Registration failed. Please try again.");
@@ -52,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (err) {
       console.error("Error:", err);
       alert("Something went wrong. Please try again.");
+    } finally {
+      toggleButtonLoading(false);
     }
   });
 

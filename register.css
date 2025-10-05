@@ -134,6 +134,90 @@ body {
   color: #444;
 }
 
+/* register.css */
+
+/* Existing styles (assumed) */
+.register-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.register-image {
+  flex: 1;
+  background: url('background.jpg') no-repeat center/cover;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+}
+
+.register-container {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #357ABD;
+}
+
+/* New styles for loading state */
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn.loading::before {
+  content: "\f110"; /* FontAwesome spinner icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 8px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .form-group input {
   width: 100%;
   padding: 0.8rem;

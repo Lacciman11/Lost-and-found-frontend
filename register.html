@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - Lost & Found</title>
   <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div class="register-wrapper">
     <!-- Left Side Background Image -->
     <div class="register-image">
       <div class="overlay">
-        <h1>Lost <span>&</span> Found</h1>
+        <h1>Lost<span>&</span>Found</h1>
         <p>Your trusted platform to reconnect with lost belongings</p>
-
         <ul class="features">
           <li>📱 Post lost or found items</li>
           <li>🔎 Search and filter easily</li>
@@ -46,7 +46,7 @@
           <label for="confirmPassword">Confirm Password</label>
           <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
         </div>
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn" id="registerBtn" data-loading-text="Loading...">Register</button>
       </form>
       <div class="extra-links">
         <p>Already have an account? <a href="login.html">Login here</a></p>

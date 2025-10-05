@@ -5,38 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Lost & Found</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* style.css (append to existing file) */
+
+/* ... Existing styles ... */
+
+/* Button Styles */
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-primary.loading::before {
+  content: "\f110"; /* FontAwesome spinner icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 8px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <header class="navbar">
     <div class="container nav-flex">
-      <h1 class="logo">Lost&Found</h1>
+      <h1 class="logo">Lost<span>&</span>Found</h1>
+      <!-- Uncomment if navigation is needed -->
       <!-- <nav>
         <ul class="nav-links">
           <li><a href="project.html">Home</a></li>
           <li><a href="login.html" class="active">Login</a></li>
         </ul>
-      </nav>
-    </div> -->
+      </nav> -->
+    </div>
   </header>
 
   <!-- Login Section -->
   <section class="form-section container">
     <h2>Login to Your Account</h2>
     <form id="loginForm" class="report-form">
-  <label>Email</label>
-  <input type="email" id="loginEmail" placeholder="Enter your email" required />
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="Enter your email" required />
 
-  <label>Password</label>
-  <input type="password" id="loginPassword" placeholder="Enter your password" required />
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter your password" required />
 
-  <a href="./Forgot-password.html" style="text-align: right;">Forgot password?</a>
+      <a href="./Forgot-password.html" style="text-align: right;">Forgot password?</a>
 
-  <button type="submit" class="btn-primary">Login</button>
-</form>
+      <button type="submit" class="btn-primary" id="loginBtn" data-loading-text="Loading...">Login</button>
+    </form>
     <p style="margin-top:1rem; text-align:center;">Don’t have an account? <a href="register.html">Register</a></p>
   </section>
-
 
   <!-- Footer -->
   <footer class="footer">
@@ -44,7 +81,7 @@
       <p>© 2025 Lost & Found Tracker. All Rights Reserved.</p>
     </div>
   </footer>
- 
- <script src="login.js"></script>
+
+  <script src="login.js"></script>
 </body>
 </html>
